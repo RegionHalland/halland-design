@@ -10,5 +10,6 @@ Som _roll_ vill jag _behov_ så att jag kan _mål_
 - [ ] Lösningen har kodgranskats av en kollega
 - [ ] Eventuellt nya komponenter har dokumenterats och syns på design.regionhalland.se
 - [ ] Storyn har synkats med övriga produktägare
+- [ ] Lösningen går i linje med WCAG 2.0 AA
 
 # Övrig information
