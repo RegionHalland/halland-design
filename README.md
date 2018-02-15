@@ -35,6 +35,17 @@ Nu har du Trellis-koden på din dator.
 I terminalen: "git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git". 
 Bedrock kommer från samma team som Trellis och används för att göra Wordpress lättare att administrera. 
 
+### Konfigurera din kommande Wordpress-server
+Innan din nya server kan skapas behöver du ställa in vilken URL du vill nå den på, vilka lösenord som skall gälla osv. Detta gör du i filerna "projektmapp/trellis/group_vars/wordpress_sites.yml" och "projektmapp/trellis/group_vars/vault.yml". Det du behöver ändra är t.ex. example.com till design.test i båda filerna och lösenorden om du så vill. 
+
+## Låt Trellis skapa din nya webbserver med Wordpress
+Väl kommen så här långt är du redo att faktiskt skapa din nya maskin som innehåller Wordpress och webbservern Nginx färdiginstallerat. Gå till "projektmapp/trellis" och kör kommandot "vagrant up" i terminalen. Nu bör en process börja där en ny virtuell maskin skapas och fylls med mängder av nödvändig programvara som också konfigureras för att vara färdig för drift. Det kan ta 5-10 minuter och under tiden visas ganska mycket output i terminalfönstret. Om allt går bra så får du i slutet ett meddelande om att maskinen är färdig. 
+* För att stoppa maskinen - i "projektmapp/trellis" kör "vagrant halt".
+* För att starta maskinen efter ett stopp - i "projektmapp/trellis" kör "vagrant halt"
+* För att radera maskinen - i "projektmapp/trellis" kör "vagrant destroy". (Du kan sedan köra "vagrant up" igen för att skapa en ny). 
+
+## Testa din nya virtuella webbserver
+Gå till http://design.test (eller den URL du konfigurerade i "vault.yml" och "wordpress_sites-yml"-filerna. Du bör nu se en tom standard Wordpress-webbplats. 
 
 ## Yarn
 
