@@ -25,14 +25,14 @@ Som nämndes ovan så är en virtuell maskin du skapar direkt i VirtualBox tom o
 Trellis är en mjukvara som använder Vagrant för att sätta upp en maskin åt oss i VirtualBox som innehåller en webbserver med Wordpress installerat utan att att vi behöver installera allting för hand. Följa helst instruktionerna direkt hos Trellis, men de viktiga stegen är följande: 
 
 ### 4.1) Skapa den mapp där du vill ha ditt projekt. 
-Från ett terminalfönster: gå till den katalog där du vill ha ditt projekt och skriv "mkdir design.test && cd design.test" för att skapa mappen och sedan gå in i den. 
+Från ett terminalfönster: gå till den katalog där du vill ha ditt projekt och skriv `mkdir design.test && cd design.test` för att skapa mappen och sedan gå in i den. 
 
 ### 4.2) Ladda ned ("klona") Trellis med Git till din nya mapp
-Från terminalen skriv "git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git". 
+Från terminalen skriv `git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git` 
 Nu har du Trellis-koden på din dator. 
 
 ### 4.3) Klona även Bedrock
-I terminalen: `git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git`. 
+I terminalen: `git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git`
 Bedrock kommer från samma team som Trellis och används för att göra Wordpress lättare att administrera. 
 
 ### 4.4) Konfigurera din kommande Wordpress-server
@@ -40,24 +40,24 @@ Innan din nya server kan skapas behöver du ställa in vilken URL du vill nå de
 
 ## 4.5) Låt Trellis skapa din nya webbserver med Wordpress
 Väl kommen så här långt är du redo att faktiskt skapa din nya maskin som innehåller Wordpress och webbservern Nginx färdiginstallerat. Gå till "projektmapp/trellis" och kör kommandot "vagrant up" i terminalen. Nu bör en process börja där en ny virtuell maskin skapas och fylls med mängder av nödvändig programvara som också konfigureras för att vara färdig för drift. Det kan ta 5-10 minuter och under tiden visas ganska mycket output i terminalfönstret. Om allt går bra så får du i slutet ett meddelande om att maskinen är färdig. 
-* För att stoppa maskinen - i "projektmapp/trellis" kör "vagrant halt".
-* För att starta maskinen efter ett stopp - i "projektmapp/trellis" kör "vagrant halt"
-* För att radera maskinen - i "projektmapp/trellis" kör "vagrant destroy". (Du kan sedan köra "vagrant up" igen för att skapa en ny). 
+* För att stoppa maskinen - i "projektmapp/trellis" kör `vagrant halt`.
+* För att starta maskinen efter ett stopp - i "projektmapp/trellis" kör `vagrant halt`
+* För att radera maskinen - i "projektmapp/trellis" kör `vagrant destroy`. (Du kan sedan köra `vagrant up` igen för att skapa en ny). 
 
 ## 4.6) Testa din nya virtuella webbserver
 Gå till http://design.test (eller den URL du konfigurerade i "vault.yml" och "wordpress_sites-yml"-filerna. Du bör nu se en tom standard Wordpress-webbplats. 
 
-Koden från din fysiska maskin klonas in i din virtuella maskin så du kan fortsätta jobba med din favorit-editor på din vanliga dator. Men du kan också logga in på den virtuella maskinen med hjälp av kommandot "vagrant ssh" (avsluta med "exit") om du vill komma åt något i den virtuella maskinen. 
+Koden från din fysiska maskin klonas in i din virtuella maskin så du kan fortsätta jobba med din favorit-editor på din vanliga dator. Men du kan också logga in på den virtuella maskinen med hjälp av kommandot `vagrant ssh` (avsluta med `exit`) om du vill komma åt något i den virtuella maskinen. 
 
 # B - Hur du använder din nya lokala utvecklingsmiljö
 
 ## Redigera CSS - Förvandla Sass-filer till vanlig CSS och synka till din virtuella maskin
 Har du jobbat med webb innan har du sannolikt redigerat CSS-filer för att ändra utseendet på din webbsida. Eftersom det vi bygger är vanlig webb är det såklart CSS som gäller här med, men när vi redigerar vår CSS är det inte i vanliga CSS-filer. Istället använder vi något som kallas "Sassy CSS" som gör det möjligt att t.ex. använda variabler (så att man t.ex. kan ändra färger på ett enda ställe istället för på varje enskilt element). Vår CSS skriver vi alltså i dessa .scss-filer under projektmappen och när allt är klart använder vi Yarn för att översätta ("kompilera") dem till vanliga CSS-filer som också laddas in från din fysiska maskin till den virtuella maskinen. 
 
-Testa t.ex. att redigera "projektmapp/site/web/app/themes/halland/resources/assets/styles/main.scss" med något enkelt som att t.ex. byta bakgrundsfärg. Gå sedan i terminalen till "projektmapp/site/web/app/themes/halland/" och skriv "yarn build". Observera att yarn använder en felsökning som är väldigt kinkig med reglerna för hur du skriver CSS. Får du ett felmeddelande kan du prova att köra kommandot "yarn run lint:styles" för att få hjälp att identifiera vad som krånglar. Korrigera och kör sedan "yarn build" och ladda om din webbläsare på sidan "http://design.test". 
+Testa t.ex. att redigera `projektmapp/site/web/app/themes/halland/resources/assets/styles/main.scss` med något enkelt som att t.ex. byta bakgrundsfärg. Gå sedan i terminalen till `projektmapp/site/web/app/themes/halland/` och skriv `yarn build`. Observera att yarn använder en felsökning som är väldigt kinkig med reglerna för hur du skriver CSS. Får du ett felmeddelande kan du prova att köra kommandot `yarn run lint:styles` för att få hjälp att identifiera vad som krånglar. Korrigera och kör sedan `yarn build` och ladda om din webbläsare på sidan "http://design.test". 
 
 
 ## Composer
-composer install
+composer install`
 
 (Skaffa källkoden för design.regionhalland.se - "klona" med Git Klona koden för design.regionhalland.se till din lokala dator med Git genom att öppna ett terminalfönster, gå dit du vill ha mappen för projektet och skriva: git clone https://github.com/RegionHalland/design.regionhalland.se.git. (Här förutsätter vi att du använder vanliga Git och inte någon av de grafiska versionerna).Du har nu hämtat källkoden till din lokala dator och kopplat mappen till vad som händer online i kodbasen. Med hjälp av Git kan du i framtiden hämta nya ändringar från nätet eller skicka upp dina egna ändringsförslag. Bara källkoden räcker dock inte så långt - vi behöver någonting som kan omvandla den till en fungerande webb, men först skaffar vi en miljö där vi kan labba ostört utan att förstöra något på din vanliga dator: en virtuell server.)
