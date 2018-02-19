@@ -40,12 +40,12 @@ Innan din nya server kan skapas behöver du ställa in vilken URL du vill nå de
 
 ## 4.5) Låt Trellis skapa din nya webbserver med Wordpress
 Väl kommen så här långt är du redo att faktiskt skapa din nya maskin som innehåller Wordpress och webbservern Nginx färdiginstallerat. Gå till "projektmapp/trellis" och kör kommandot "vagrant up" i terminalen. Nu bör en process börja där en ny virtuell maskin skapas och fylls med mängder av nödvändig programvara som också konfigureras för att vara färdig för drift. Det kan ta 5-10 minuter och under tiden visas ganska mycket output i terminalfönstret. Om allt går bra så får du i slutet ett meddelande om att maskinen är färdig. 
-* För att stoppa maskinen - i "projektmapp/trellis" kör `vagrant halt`.
-* För att starta maskinen efter ett stopp - i "projektmapp/trellis" kör `vagrant halt`
-* För att radera maskinen - i "projektmapp/trellis" kör `vagrant destroy`. (Du kan sedan köra `vagrant up` igen för att skapa en ny). 
+* För att stoppa maskinen - i `projektmapp/trellis` kör `vagrant halt`.
+* För att starta maskinen efter ett stopp - i `projektmapp/trellis` kör `vagrant halt`
+* För att radera maskinen - i `projektmapp/trellis` kör `vagrant destroy`. (Du kan sedan köra `vagrant up` igen för att skapa en ny). 
 
 ## 4.6) Testa din nya virtuella webbserver
-Gå till http://design.test (eller den URL du konfigurerade i "vault.yml" och "wordpress_sites-yml"-filerna. Du bör nu se en tom standard Wordpress-webbplats. 
+Gå till http://design.test (eller den URL du konfigurerade i `vault.yml` och `wordpress_sites-yml`-filerna. Du bör nu se en tom standard Wordpress-webbplats. 
 
 Koden från din fysiska maskin klonas in i din virtuella maskin så du kan fortsätta jobba med din favorit-editor på din vanliga dator. Men du kan också logga in på den virtuella maskinen med hjälp av kommandot `vagrant ssh` (avsluta med `exit`) om du vill komma åt något i den virtuella maskinen. 
 
@@ -60,4 +60,4 @@ Testa t.ex. att redigera `projektmapp/site/web/app/themes/halland/resources/asse
 ## Composer
 composer install`
 
-(Skaffa källkoden för design.regionhalland.se - "klona" med Git Klona koden för design.regionhalland.se till din lokala dator med Git genom att öppna ett terminalfönster, gå dit du vill ha mappen för projektet och skriva: git clone https://github.com/RegionHalland/design.regionhalland.se.git. (Här förutsätter vi att du använder vanliga Git och inte någon av de grafiska versionerna).Du har nu hämtat källkoden till din lokala dator och kopplat mappen till vad som händer online i kodbasen. Med hjälp av Git kan du i framtiden hämta nya ändringar från nätet eller skicka upp dina egna ändringsförslag. Bara källkoden räcker dock inte så långt - vi behöver någonting som kan omvandla den till en fungerande webb, men först skaffar vi en miljö där vi kan labba ostört utan att förstöra något på din vanliga dator: en virtuell server.)
+(Skaffa källkoden för design.regionhalland.se - "klona" med Git Klona koden för design.regionhalland.se till din lokala dator med Git genom att öppna ett terminalfönster, gå dit du vill ha mappen för projektet och skriva: `git clone https://github.com/RegionHalland/design.regionhalland.se.git` (Här förutsätter vi att du använder vanliga Git och inte någon av de grafiska versionerna).Du har nu hämtat källkoden till din lokala dator och kopplat mappen till vad som händer online i kodbasen. Med hjälp av Git kan du i framtiden hämta nya ändringar från nätet eller skicka upp dina egna ändringsförslag. Bara källkoden räcker dock inte så långt - vi behöver någonting som kan omvandla den till en fungerande webb, men först skaffar vi en miljö där vi kan labba ostört utan att förstöra något på din vanliga dator: en virtuell server.)
