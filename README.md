@@ -32,7 +32,7 @@ Från terminalen skriv "git clone --depth=1 git@github.com:roots/trellis.git && 
 Nu har du Trellis-koden på din dator. 
 
 ### 4.3) Klona även Bedrock
-I terminalen: "git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git". 
+I terminalen: `git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git`. 
 Bedrock kommer från samma team som Trellis och används för att göra Wordpress lättare att administrera. 
 
 ### 4.4) Konfigurera din kommande Wordpress-server
