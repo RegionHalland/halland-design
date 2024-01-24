@@ -1,3 +1,5 @@
+# OBS! Arkiverat repo
+
 # design.regionhalland.se
 Källkodsbibliotek för den kod som är unik för design.regionhalland.se
 
